@@ -8,7 +8,7 @@ export async function POST(req){
     const token = await req.headers.get("cookie").split('=')[1]
     const {name} = jwt.verify(token , process.env.SECRET)
     const {hour , date}= await req.json()
-    const task = await userModel.updateOne({name} , {$set:{tasks:{hour , date}}})
+    const task = await userModel.updateOne({name} , {$push:{tasks:{hour , date}}})
     if(!task) return NextResponse.error('هنگ کرد سرور :(')
     return NextResponse.json({status:201 , message:"ساعت کاری ذخیره شد"})
 }
