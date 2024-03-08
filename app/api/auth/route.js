@@ -13,7 +13,7 @@ export async function POST(req){
         if(checkUser){
              const checkPassword =  compare(checkUser.password , password)
              if(checkPassword){
-                const token = jwt.sign({name} ,process.env.secret , {expiresIn:"1y"})
+                const token = jwt.sign({name} ,process.env.SECRET , {expiresIn:"1y"})
                 const response = NextResponse.json({status:'success'} , {status:201})
                 response.cookies.set({
                    name:'authorization', 
@@ -32,7 +32,7 @@ export async function POST(req){
                 return NextResponse.json({error:"شما اجازه دسترسی ندارید"})
             }
          if(result){
-             const token = jwt.sign({name} ,process.env.secret , {expiresIn:"1y"})
+             const token = jwt.sign({name} ,process.env.SECRET , {expiresIn:"1y"})
             
              const response = NextResponse.json({status:'success'} , {status:201})
              response.cookies.set({
