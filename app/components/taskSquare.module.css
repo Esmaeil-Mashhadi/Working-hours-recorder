@@ -1,0 +1,201 @@
+.buttonsContainer{
+    position: relative;
+    z-index: 7;
+    width: 600px;
+    height: 400px;
+    background-color: rgba(223, 244, 244, 0.219);
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(174, 174, 145, 0.421) ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;  
+  }
+  
+  .todayContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .date {
+    font-weight: bold;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .date input {
+    outline: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    background-color: rgba(189, 241, 241, 0.286);
+    border: none;
+    text-align: center;
+    font-size: 20px;
+  }
+  .inputContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+  }
+
+  .inputContainer button{
+    position: absolute;
+    font-weight: lighter;
+    padding: 5px;
+    left: -60px;
+    top: 0px;
+    white-space: nowrap;
+    width: 60px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    transition: .2s ease;
+    transform: translateX(-50px);
+    opacity: 0;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+
+  }
+
+  .inputContainer input:hover + button ,.inputContainer button:hover{
+    opacity: 1;
+    transform: translate(0px);
+  }
+
+  .inputContainer input {
+      border-radius: 5px;
+      padding: 5px;
+      border: none;
+      box-shadow: 0px 0px 5px black;
+      width: 60px;
+      text-align: center;
+      outline: none;
+      background-color: rgba(240, 248, 255, 0.245);
+  }
+
+
+ 
+
+  .shareContainer{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  
+  .workContainer {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .rangeStyle{
+    display: block;
+    width: 100%;
+    height: 20px;
+    background-color: coral;
+    border-radius: 5px;
+    position: relative;
+  }
+  .rangeStyle::before{
+    content: "";
+    position: absolute;
+    background-color: rgb(66, 190, 190);
+    width: var(--percent);
+    height: 100%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .hourContainer{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+
+  .percentContainer{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  
+  .submitContainer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  
+  .submit{
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+    background-color: chartreuse;
+    font-weight: bold;
+    color: black;
+    box-shadow: 0px 0px 5px black;
+    transition: .2s ease;
+    width: 50px;
+  }
+  .exit{
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+    background-color: orangered;
+    font-weight: bold;
+    color: black;
+    box-shadow: 0px 0px 5px black;
+    transition: .2s ease;
+    width: 50px;    
+  }
+  .submitContainer button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+@media screen and (max-width:650px) {
+  .buttonsContainer{
+    width: 400px;
+    height: 300px;
+  }
+
+}
+
+@media screen and (max-width:450px) {
+  .buttonsContainer{
+    width: 300px;
+    height: 400px;
+    gap: 10px;
+  }
+
+
+  .date input{
+    width: 100px;
+    font-size: 18px;
+  }
+
+  .inputContainer{
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .submitContainer button{
+    font-size: 10px;
+  }
+  .workContainer{
+    width: 100%;
+    padding: 0px 10px;
+  }
+
+  
+}
