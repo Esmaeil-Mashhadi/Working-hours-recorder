@@ -86,8 +86,8 @@ const TaskSquare = ({name , exitHandler , MojiTotalWork , EsiTotalWork}) => {
                   </div>
                 <span style={{'--percent': `${(EsiTotalWork.hours/totalTeamHours)*100}%`}} className={styles.rangeStyle}></span>
                 <div className={styles.percentContainer}>
-                  <label> درصد اسماعیل : {(EsiTotalWork.hours / totalTeamHours)*100}% </label>
-                  <label> {(MojiTotalWork.hours/(totalTeamHours))*100}% : درصد مجتبی </label>
+                  <label> درصد اسماعیل : {Math.round((EsiTotalWork.hours / totalTeamHours)*100)}% </label>
+                  <label> {Math.round((MojiTotalWork.hours/(totalTeamHours))*100)}% : درصد مجتبی </label>
                </div>
                 
                </div>
