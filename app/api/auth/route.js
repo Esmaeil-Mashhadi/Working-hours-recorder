@@ -26,11 +26,12 @@ export async function POST(req){
         }
 
         const allowedUsers = ['esi2022' ,'moji3880' ]
+        if(!allowedUsers.includes(name)){
+            return NextResponse.json({error:"شما اجازه دسترسی ندارید"})
+        }
         const hashedPassword = await hash(password , 10)
          const result = await userModel.create({name , password: hashedPassword})
-            if(!allowedUsers.includes(name)){
-                return NextResponse.json({error:"شما اجازه دسترسی ندارید"})
-            }
+
          if(result){
              const token = jwt.sign({name} ,process.env.SECRET , {expiresIn:"1y"})
             

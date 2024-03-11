@@ -2,25 +2,14 @@ import styles from './page.module.css'
 import TaskSquare from './components/TaskSquare';
 import { getTotalHours } from '@/utils/getTotalHours';
 import Form from './components/modules/Form';
-import {cookies } from 'next/headers'
-import jwt from "jsonwebtoken"
+import { checkUserPermission } from '@/utils/checkUserPermission';
+import { cookies } from 'next/headers';
 
 const MainPage = async() => {
 
   
-  let permission = false
-  let name = ""
-  const token = cookies().get("authorization")?.value 
-  let result
-  if(token){
-     result = jwt.verify(token ,"ENHm8WeMP1" )
-     permission = result?.name
-    if(permission == "esi2022"){
-      name = "اسماعیل"
-    }else{
-      name = "مجتبی"
-    }
-  }
+  const {name, permission} = checkUserPermission()
+  console.log(name);
   const {MojiTotalWork , EsiTotalWork} = await getTotalHours()
 
   const exitHandler = async()=>{

@@ -9,6 +9,7 @@ const getTotalHours = async()=>{
  const Esmaeil = data.find(item => item.name == "esi2022")
  const Mojtaba = data.find(item => item.name == "moji3880")
 
+
 const MojiTotalWork = calculateTotalWork(Mojtaba?.tasks)
 const EsiTotalWork = calculateTotalWork(Esmaeil?.tasks)
 

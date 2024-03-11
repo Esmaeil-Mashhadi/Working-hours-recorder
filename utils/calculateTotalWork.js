@@ -38,7 +38,7 @@ export const calculateTotalWork = (tasks)=>{
    
      if(minuteSum >= 60){
         const [h] = JSON.stringify(minuteSum/60)
-       totalWork.hours = +h + hourSum == 0
+       totalWork.hours = +h + hourSum 
        totalWork.minutes = minuteSum%60
      }else{
        totalWork.hours = hourSum
